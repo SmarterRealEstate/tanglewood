@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanglewood Phase 2 — Oshawa | Register for VIP Platinum Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','4093978017293385');fbq('track','PageView');
+  </script>
+  <style>
+    :root {
+      --dark:      #1E1912;
+      --dark2:     #150F08;
+      --orange:    #D96B2A;
+      --orange-dk: #C05A1E;
+      --orange-lt: #F0924E;
+      --warm:      #F5A060;
+      --light:     #FAF7F3;
+      --border:    #E5DDD4;
+      --text:      #333333;
+      --text-lt:   #6B6258;
+      --white:     #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    /* ── NAV ── */
+    .nav {
+      background: var(--dark);
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(30,25,18,0.45);
+    }
+    .nav-logo {
+      height: 44px;
+      width: auto;
+    }
+    .nav-cta {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.5rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--orange-dk); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      background: url('https://static.wixstatic.com/media/f42cd3_622afd9fa523421caa9289d0254a487df000.jpg') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(30,25,18,0.92) 0%, rgba(30,25,18,0.72) 55%, rgba(30,25,18,0.28) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      padding: 4rem 3rem;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--orange-lt);
+      margin-bottom: 1.4rem;
+    }
+    .hero-logo {
+      width: 300px;
+      max-width: 100%;
+      margin-bottom: 1.8rem;
+      display: block;
+    }
+    .hero-tagline {
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+    .hero-tagline strong { font-weight: 800; color: var(--orange-lt); }
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+    .hero-type {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.70);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 2.2rem;
+    }
+    .hero-btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .hero-btn:hover { background: var(--orange-dk); }
+
+    /* ── BADGE STRIP ── */
+    .badge-strip {
+      background: var(--orange);
+      color: var(--white);
+      text-align: center;
+      padding: 0.8rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .badge-strip span { color: var(--white); font-weight: 800; }
+
+    /* ── INTRO ── */
+    .intro {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5.5rem 2rem;
+      text-align: center;
+    }
+    .section-eyebrow {
+      display: block;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .intro h2 {
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      font-weight: 300;
+      color: var(--dark);
+      line-height: 1.3;
+      margin-bottom: 1.6rem;
+      letter-spacing: -0.01em;
+    }
+    .intro h2 strong { font-weight: 800; }
+    .intro p {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.75;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      background: var(--light);
+      padding: 5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .features-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .features-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .features-header h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      font-weight: 300;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+    }
+    .features-header h2 strong { font-weight: 800; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: var(--white);
+      border-top: 3px solid var(--orange);
+      padding: 1.8rem 1.6rem;
+    }
+    .feature-icon { font-size: 1.75rem; margin-bottom: 0.8rem; }
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.01em;
+    }
+    .feature-card p { font-size: 0.9rem; color: var(--text); line-height: 1.65; }
+
+    /* ── TYPES STRIP ── */
+    .types-strip {
+      background: var(--dark);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+    .types-inner { max-width: 900px; margin: 0 auto; }
+    .types-strip h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+    }
+    .types-strip h2 strong { font-weight: 800; color: var(--orange-lt); }
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .type-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(217,107,42,0.35);
+      padding: 1.8rem 1rem;
+      border-radius: 2px;
+    }
+    .type-card .type-label {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--orange-lt);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.4rem;
+    }
+    .type-card .type-desc {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+    }
+
+    /* ── FORM SECTION ── */
+    .form-section {
+      background: var(--dark);
+      background: linear-gradient(135deg, var(--dark2) 0%, var(--dark) 100%);
+      padding: 5.5rem 2rem;
+      position: relative;
+    }
+    .form-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--orange);
+    }
+    .form-inner {
+      max-width: 660px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .form-inner .section-eyebrow { color: var(--orange-lt); }
+    .form-inner h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .form-inner h2 strong { font-weight: 800; }
+    .form-inner > p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2.5rem;
+      line-height: 1.65;
+    }
+    .form-card {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      text-align: left;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    }
+
+    /* ── DEVELOPER ── */
+    .developer {
+      padding: 5rem 2rem;
+      background: var(--light);
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .developer-inner { max-width: 700px; margin: 0 auto; }
+    .developer-eyebrow {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-lt);
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+    .developer-logo {
+      height: 60px;
+      width: auto;
+      margin-bottom: 1.5rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .developer p {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.75;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark2);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 0.7rem;
+      line-height: 1.75;
+    }
+    footer a { color: rgba(255,255,255,0.65); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-content { padding: 3rem 1.5rem; }
+      .types-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .nav { padding: 0 1.2rem; }
+      .form-card { padding: 1.75rem 1.25rem; }
+      .types-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <img class="nav-logo" src="https://static.wixstatic.com/media/f42cd3_f7acd68bc30b43b994e8343169c9f54e~mv2.png" alt="Tanglewood" onerror="this.style.display='none'">
+  <a href="#register" class="nav-cta">Register Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Phase 2 &mdash; Now Registering &mdash; Oshawa, Ontario</span>
+    <img class="hero-logo" src="https://static.wixstatic.com/media/f42cd3_f7acd68bc30b43b994e8343169c9f54e~mv2.png" alt="Tanglewood" onerror="this.style.display='none'">
+    <h1 class="hero-tagline">A Brighter Way<br>to Live in <strong>Oshawa</strong></h1>
+    <p class="hero-sub">Exclusive Singles, Terrace Homes &amp; Executive Townhomes</p>
+    <p class="hero-type">Phase 2 &mdash; Coming Soon &mdash; Near Hwy 401 &middot; 407 &middot; GO Transit &middot; VIA Rail</p>
+    <a href="#register" class="hero-btn">Register for VIP Platinum Access</a>
+  </div>
+</section>
+
+<!-- BADGE STRIP -->
+<div class="badge-strip">Phase 2 Coming Soon &nbsp;&middot;&nbsp; <span>VIP Platinum</span> Registration Now Open &nbsp;&middot;&nbsp; Oshawa</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <span class="section-eyebrow">Oshawa, Ontario</span>
+  <h2>Life at Tanglewood.<br><strong>Where Oshawa Meets Elevated Living.</strong></h2>
+  <p>Phase 1 of Tanglewood sold out — and now Phase 2 is on the horizon. Developed by Medallion Developments, Tanglewood brings a new standard of living to Oshawa with expertly crafted Exclusive Singles, Terrace Homes, and Executive Townhomes. Perfectly positioned near Hwy 401, Hwy 407, GO Transit, VIA Rail, and the shores of Lake Ontario — this is the Oshawa address everyone will be talking about.</p>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="features-inner">
+    <div class="features-header">
+      <span class="section-eyebrow">Location &amp; Lifestyle</span>
+      <h2>Everything You Need, <strong>Right Where You Want It</strong></h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🛣️</div>
+        <h3>Highway Access</h3>
+        <p>Immediate connections to Hwy 401 and Hwy 407 make every commute fast and flexible — whether you&rsquo;re heading to Toronto or anywhere across the GTA.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🚊</div>
+        <h3>GO Transit &amp; VIA Rail</h3>
+        <p>Steps from GO Transit and VIA Rail connections — stress-free transit options that get you downtown without the drive.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌊</div>
+        <h3>Lake Ontario Living</h3>
+        <p>Waterfront trails, scenic parks, and the natural beauty of Lake Ontario are right in your backyard — a lifestyle upgrade at every turn.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏫</div>
+        <h3>Family-Friendly Community</h3>
+        <p>Top-rated schools, community centres, sports facilities, and recreation programs make Tanglewood the perfect place to raise a family.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛍️</div>
+        <h3>Urban Conveniences</h3>
+        <p>Shopping, dining, entertainment, and everyday essentials are all minutes away — the convenience of city living without the congestion.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏡</div>
+        <h3>Elevated Craftsmanship</h3>
+        <p>Built by Medallion Developments — a trusted name committed to thoughtfully designed homes with quality finishes and lasting value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME TYPES -->
+<section class="types-strip">
+  <div class="types-inner">
+    <h2>Choose Your <strong>Tanglewood Home</strong></h2>
+    <div class="types-grid">
+      <div class="type-card">
+        <div class="type-label">Exclusive Singles</div>
+        <div class="type-desc">Detached Homes</div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Terrace Homes</div>
+        <div class="type-desc">Modern Terraces</div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">Executive Townhomes</div>
+        <div class="type-desc">Freehold Towns</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="register">
+  <div class="form-inner">
+    <span class="section-eyebrow">VIP Platinum Access</span>
+    <h2>Be <strong>First in Line</strong></h2>
+    <p>Register now for exclusive VIP Platinum pricing, first access to floor plans and suite selections, and special incentives before the public launch.</p>
+    <div class="form-card">
+      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+      <script>
+        hbspt.forms.create({
+          region: "na1",
+          portalId: "39925421",
+          formId: "3c57becc-2487-47a3-b7b5-7a6ec2d869de",
+          onFormReady: function($form) {
+            try {
+              var iframe = document.querySelector('.hs-form-iframe');
+              if (iframe && iframe.contentDocument) {
+                var s = iframe.contentDocument.createElement('style');
+                var css = [
+                  'body { font-family: "Inter", sans-serif; }',
+                  '.hs-button.primary { background:#D96B2A !important; border-color:#D96B2A !important; color:#FFFFFF !important; font-weight:800 !important; letter-spacing:0.08em !important; text-transform:uppercase !important; border-radius:2px !important; }',
+                  '.hs-button.primary:hover { background:#C05A1E !important; border-color:#C05A1E !important; }',
+                  '.hs-form__virality-link,.hs-form__virality-link * { display:none !important; }'
+                ].join(' ');
+                s.appendChild(iframe.contentDocument.createTextNode(css));
+                iframe.contentDocument.head.appendChild(s);
+              }
+            } catch(e) {}
+          }
+        });
+      </script>
+    </div>
+  </div>
+</section>
+
+<!-- DEVELOPER -->
+<section class="developer">
+  <div class="developer-inner">
+    <span class="developer-eyebrow">Developer</span>
+    <img class="developer-logo" src="https://static.wixstatic.com/media/f42cd3_f7acd68bc30b43b994e8343169c9f54e~mv2.png" alt="Medallion Developments — Tanglewood" onerror="this.style.display='none'">
+    <p>Medallion Developments is committed to building exceptional communities across Ontario. With a focus on quality design, enduring craftsmanship, and neighbourhoods built to last — Tanglewood is the next chapter in their legacy of elevated living.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>We do not represent the builder directly. We represent you. Renderings are artist&rsquo;s imagination only. All information, prices, specifications, floor plans, and incentives are subject to change at any time without notice. E. &amp; O.E.</p>
+  <p style="margin-top:0.5rem;">Jeffrey Villeneuve &nbsp;|&nbsp; Meta Realty Inc. &nbsp;|&nbsp; info@smarterrealestate.ca &nbsp;|&nbsp; (647) 409-7653</p>
+</footer>
+
+</body>
+</html>

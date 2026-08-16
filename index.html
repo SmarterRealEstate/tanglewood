@@ -365,6 +365,22 @@
       .form-card { padding: 1.75rem 1.25rem; }
       .types-grid { grid-template-columns: 1fr; }
     }
+  
+    /* Custom form */
+    .form-group{margin-bottom:18px;}
+    .form-group label{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#555;margin-bottom:6px;}
+    .form-group input,.form-group select{width:100%;padding:14px 16px;background:#fff;border:1px solid #ccc;border-radius:2px;color:#333;font-family:inherit;font-size:15px;outline:none;}
+    .form-group input::placeholder{color:#aaa;}
+    .form-group select option{background:#fff;color:#333;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    @media(max-width:540px){.form-row{grid-template-columns:1fr;}}
+    .form-submit{width:100%;margin-top:8px;padding:18px;background:#C49A3C;color:#1E1912;border:2px solid #C49A3C;font-family:inherit;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;}
+    .form-submit:hover:not(:disabled){opacity:0.85;}
+    .form-submit:disabled{opacity:.6;cursor:not-allowed;}
+    .form-note{margin-top:12px;font-size:12px;color:#888;text-align:center;}
+    .form-success{display:none;text-align:center;padding:40px 20px;}
+    .form-success h3{font-size:26px;margin-bottom:14px;color:#1E1912;}
+    .form-success p{font-size:15px;line-height:1.7;color:#555;}
   </style>
 </head>
 <body>
@@ -468,44 +484,59 @@
     <h2>Be <strong>First in Line</strong></h2>
     <p>Register now for exclusive VIP Platinum pricing, first access to floor plans and suite selections, and special incentives before the public launch.</p>
     <div class="form-card">
-      <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-      <script>
-        hbspt.forms.create({
-          region: "na1",
-          portalId: "39925421",
-          formId: "3c57becc-2487-47a3-b7b5-7a6ec2d869de",
-          onFormReady: function($form) {
-            try {
-              var iframe = document.querySelector('.hs-form-iframe');
-              if (iframe && iframe.contentDocument) {
-                var s = iframe.contentDocument.createElement('style');
-                var css = [
-                  'body { font-family: "Inter", sans-serif; }',
-                  '.hs-button.primary { background:#C49A3C !important; border-color:#C49A3C !important; color:#FFFFFF !important; font-weight:800 !important; letter-spacing:0.08em !important; text-transform:uppercase !important; border-radius:2px !important; }',
-                  '.hs-button.primary:hover { background:#A8832A !important; border-color:#A8832A !important; }',
-                  '.hs-form__virality-link,.hs-form__virality-link * { display:none !important; }'
-                ].join(' ');
-                s.appendChild(iframe.contentDocument.createTextNode(css));
-                iframe.contentDocument.head.appendChild(s);
-              var iframeDoc = iframe && iframe.contentDocument;
-              if (iframeDoc) {
-                var hsForm = iframeDoc.querySelector('form');
-                if (hsForm) {
-                  [['project','Tanglewood New'],['contact_tier','Tier 6 -Social Media Lead'],['client_type','Preconstruction']].forEach(function(p) {
-                    var ex = hsForm.querySelector('input[name="' + p[0] + '"]');
-                    if (ex) { ex.value = p[1]; } else {
-                      var inp = iframeDoc.createElement('input');
-                      inp.type = 'hidden'; inp.name = p[0]; inp.value = p[1];
-                      hsForm.appendChild(inp);
-                    }
-                  });
-                }
-              }
-              }
-            } catch(e) {}
-          }
-        });
-      </script>
+      <form id="regForm">
+  <div class="form-row">
+    <div class="form-group"><label for="fn">First Name *</label><input type="text" id="fn" placeholder="Jane" required></div>
+    <div class="form-group"><label for="ln">Last Name *</label><input type="text" id="ln" placeholder="Smith" required></div>
+  </div>
+  <div class="form-group"><label for="ph">Phone Number</label><input type="tel" id="ph" placeholder="(416) 555-0100"></div>
+  <div class="form-group"><label for="em">Email *</label><input type="email" id="em" placeholder="jane@example.com" required></div>
+  <div class="form-group"><label for="rt">Are you a Realtor? *</label>
+    <select id="rt" required><option value="" disabled selected>Select one</option><option value="Yes">Yes</option><option value="No">No</option></select>
+  </div>
+  <button type="submit" class="form-submit" id="submitBtn">Register for VIP Platinum Access</button>
+  <p class="form-note">By submitting you consent to receive communications about this project. Your information is kept private and will never be shared.</p>
+</form>
+<div class="form-success" id="formSuccess">
+  <h3>You're on the VIP List!</h3>
+  <p>We'll be in touch with priority floor plans, pricing, and exclusive incentives reserved for VIP Platinum registrants.</p>
+</div>
+<script>
+const HS_PORTAL = '39925421';
+const HS_FORM   = '3c57becc-2487-47a3-b7b5-7a6ec2d869de';
+const HS_TAGS = { lifecyclestage:'lead', contact_tier:'Tier 6 -Social Media Lead', client_type:'Preconstruction', project:'Tanglewood New' };
+
+document.getElementById('regForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = 'Submitting...'; btn.disabled = true;
+  const payload = {
+    fields: [
+      {name:'firstname', value:document.getElementById('fn').value.trim()},
+      {name:'lastname',  value:document.getElementById('ln').value.trim()},
+      {name:'phone',     value:document.getElementById('ph').value.trim()},
+      {name:'email',     value:document.getElementById('em').value.trim()},
+      {name:'are_you_a_realtor_', value:document.getElementById('rt').value},
+      {name:'lifecyclestage', value:HS_TAGS.lifecyclestage},
+      {name:'contact_tier',  value:HS_TAGS.contact_tier},
+      {name:'client_type',   value:HS_TAGS.client_type},
+      {name:'project',       value:HS_TAGS.project},
+    ],
+    context: {pageUri: window.location.href, pageName: document.title}
+  };
+  try {
+    const res = await fetch('https://api.hsforms.com/submissions/v3/integration/submit/39925421/3c57becc-2487-47a3-b7b5-7a6ec2d869de',
+      {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)});
+    if (!res.ok) throw new Error((await res.json()).message || 'Submission failed');
+    if (typeof fbq !== 'undefined') fbq('track', 'Lead', {content_name:'Tanglewood VIP Registration'});
+    document.getElementById('regForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  } catch(err) {
+    console.error(err);
+    btn.textContent = 'Something went wrong. Please try again.'; btn.disabled = false;
+  }
+});
+</script>
     </div>
   </div>
 </section>
